@@ -1,5 +1,6 @@
 package com.example.personas_material;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -8,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
+
 
 import java.util.ArrayList;
 
@@ -20,21 +21,24 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.Pers
 	}
 
 
-
-
 	@Override
 	public PersonaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-		return null;
+		View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_persona, parent,false);
+		return new PersonaViewHolder(v);
 	}
 
 	@Override
 	public void onBindViewHolder(@NonNull PersonaViewHolder holder, int position) {
-
+		Persona p = personas.get(position);
+		holder.foto.setImageResource(p.getFoto());
+		holder.cedula.setText(p.getCedula());
+		holder.nombre.setText(p.getNombre());
+		holder.apellido.setText(p.getApellido());
 	}
 
 	@Override
 	public int getItemCount() {
-		return 0;
+		return personas.size();
 	}
 
 	public static class PersonaViewHolder extends RecyclerView.ViewHolder{
