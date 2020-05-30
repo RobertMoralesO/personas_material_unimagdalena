@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +43,7 @@ public class AdaptadorPersona extends RecyclerView.Adapter<AdaptadorPersona.Pers
 	}
 
 	public static class PersonaViewHolder extends RecyclerView.ViewHolder{
-		private ImageView foto;
+		private CircleImageView foto;
 		private TextView cedula;
 		private TextView nombre;
 		private TextView apellido;
