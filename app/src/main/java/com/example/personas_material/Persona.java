@@ -5,12 +5,25 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	private int foto;
+	private String id;
 
 	public Persona (String cedula, String nombre, String apellido, int foto){
 		this.cedula = cedula;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.foto = foto;
+	}
+
+	public Persona (String cedula, String nombre, String apellido, int foto, String id){
+		this.cedula = cedula;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.foto = foto;
+		this.id = id;
+	}
+
+	public String getId() {
+		return id;
 	}
 
 	public String getCedula() {

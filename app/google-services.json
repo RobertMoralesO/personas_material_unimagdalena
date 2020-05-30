@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "3647534884",
+    "firebase_url": "https://personasmaterialunimagdalena.firebaseio.com",
+    "project_id": "personasmaterialunimagdalena",
+    "storage_bucket": "personasmaterialunimagdalena.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3647534884:android:4081b46dc572386ddde5b1",
+        "android_client_info": {
+          "package_name": "com.example.personas_material"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3647534884-rnarm50ubp49gd0s8ecvh1vpfvjjr3fg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.personas_material",
+            "certificate_hash": "44d7afaf4052494f50ff14a06cbd2b58984f145c"
+          }
+        },
+        {
+          "client_id": "3647534884-ubath12to4nnkekj8h6psk2pg1lvvi0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADy2T66q3NqAsxgfRH96mk74N7AnxwmL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3647534884-ubath12to4nnkekj8h6psk2pg1lvvi0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
