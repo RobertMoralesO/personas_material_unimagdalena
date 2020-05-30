@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity implements AdaptadorPersona.
 		Toolbar toolbar = findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 
+
 		FloatingActionButton fab;
 		RecyclerView lstPersonas;
 		ArrayList<Persona> personas;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements AdaptadorPersona.
 		Intent intent;
 		intent = new Intent(MainActivity.this, AgregarPersona.class);
 		startActivity(intent);
-		finish();
+		//finish();
 	}
 
 
@@ -67,6 +68,6 @@ public class MainActivity extends AppCompatActivity implements AdaptadorPersona.
 		intent = new Intent(MainActivity.this, DetallePersona.class);
 		intent.putExtra("datos", bundle);
 		startActivity(intent);
-		finish();
+		//finish();
 	}
 }
