@@ -14,6 +14,10 @@ public class Persona {
 		this.foto = foto;
 	}
 
+
+	public Persona(){
+	}
+
 	public Persona (String cedula, String nombre, String apellido, int foto, String id){
 		this.cedula = cedula;
 		this.nombre = nombre;
