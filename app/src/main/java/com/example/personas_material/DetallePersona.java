@@ -5,11 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import org.w3c.dom.Text;
 
@@ -23,12 +29,13 @@ public class DetallePersona extends AppCompatActivity {
 		setContentView(R.layout.activity_detalle_persona);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		ImageView foto;
+		final ImageView foto;
 		TextView cedula, nombre, apellido;
 		Bundle bundle;
 		Intent intent;
-		String ced, nom, apell;
+		String id,ced, nom, apell;
 		int fot;
+		StorageReference storageReference;
 
 		foto = findViewById(R.id.imgFotoDetalle);
 		cedula = findViewById(R.id.lblCedulaDetalle);
@@ -38,17 +45,23 @@ public class DetallePersona extends AppCompatActivity {
 		intent = getIntent();
 		bundle = intent.getBundleExtra("datos");
 
-		fot = bundle.getInt("foto");
+		id = bundle.getString("id");
 		ced = bundle.getString("cedula");
 		nom = bundle.getString("nombre");
 		apell = bundle.getString("apellido");
 
-		foto.setImageResource(fot);
+		storageReference = FirebaseStorage.getInstance().getReference();
+		storageReference.child(id).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+			@Override
+			public void onSuccess(Uri uri) {
+				Picasso.get().load(uri).into(foto);
+			}
+		});
+		//foto.setImageResource(fot);
 		cedula.setText(ced);
 		nombre.setText(nom);
 		apellido.setText(apell);
-
-		p = new Persona(ced, nom, apell, fot);
+		p = new Persona(ced, nom, apell, 0,id);
 	}
 
 	public void onBackPressed(){
