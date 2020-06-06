@@ -22,4 +22,5 @@
 	<string name="pregunta_mensaje_eliminar">¿Está seguro que desea eliminar a esta persona?</string>
 	<string name="opcion_si">Si</string>
 	<string name="opcion_no">No</string>
+	<string name="titulo_ventana_seleccionar_foto">Seleccione la foto</string>
 </resources>
